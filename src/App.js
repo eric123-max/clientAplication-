@@ -1,12 +1,17 @@
 import React from 'react'
+import Home from './screens/Home'
 
-class App extends React.Component{
-  render(){
-    return(
-    <div className = "App">
-      This is my App
-    </div>
-    )}
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Home />
+      </div>
+    )
+  }
+
+
 
 }
 export default App
