@@ -1,17 +1,71 @@
-import React from 'react'
-import { Select } from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { Menu } from 'semantic-ui-react'
+import { Input } from 'semantic-ui-react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from '../screens/Home'
+import ItemPage from '../screens/ItemPage'
 
-const menuoptions = [
-  { key: 'me', value: 'me', text: 'menu' },
-  { key: 'co', value: 'co', text: 'comments' },
-  { key: 'br', value: 'br', text: 'breakfast' },
-  { key: 'lu', value: 'lu', text: 'lunch' },
-  { key: 'di', value: 'di', text: 'dinner' },
-  { key: 'mid', value: 'mid', text: 'midnight snack' },
-]
+export default class Navigation extends Component {
+  state = {}
 
-const Navigation = () => (
-  <Select placeholder='-Select-' options={menuoptions} />
-)
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-export default Navigation
+  render() {
+    const { activeItem } = this.state
+
+    return (
+      <Router>
+        <Menu>
+          <Menu.Item header
+            as={Link}
+            to="/"
+          >
+            The dishes</Menu.Item>
+          <Menu.Item
+            name='Breakfast'
+            as={Link}
+            to="/item"
+
+          />
+          <Menu.Item
+            name='Lunch'
+            active={activeItem === 'Lunch'}
+          //onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            name='Dinner'
+            active={activeItem === 'Dinner'}
+          //onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            name='Midnight snack'
+            active={activeItem === 'Midnight snack'}
+          //onClick={this.handleItemClick}
+          />
+
+          <Menu.Item position='right'>
+            <Input action={{ icon: 'search' }} placeholder='Search...' />
+          </Menu.Item>
+        </Menu>
+
+        <Switch>
+
+
+          <Route path='/' exact>
+            <Home />
+          </Route>
+
+          <Route path='/item' exact>
+            <ItemPage/>
+          </Route>
+
+        </Switch>
+      </Router>
+    )
+  }
+}

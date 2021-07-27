@@ -12,7 +12,7 @@ class MenuItem extends React.Component {
             <div className="MenuItem">
                 <Item.Group>
                     <Card>
-                        <Image src='https://picsum.photos/300' />
+                        <Image src='https://picsum.photos/id/1/200/300' />
                         <Card.Content>
                             <Card.Header>{props.id}. {props.name}</Card.Header>
                             <Card.Meta></Card.Meta>

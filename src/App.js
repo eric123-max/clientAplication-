@@ -1,12 +1,12 @@
 import React from 'react'
-import Home from './screens/Home'
-
+import 'semantic-ui-css/semantic.min.css'
+import Navigation from './components/Navigation'
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Home />
+        <Navigation/>
       </div>
     )
   }

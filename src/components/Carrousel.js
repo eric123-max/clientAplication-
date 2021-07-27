@@ -21,25 +21,26 @@ export default class Carrousel extends Component {
         <h2>The dishes</h2>
         <Slider {...settings}>
           <div>
-            <img src="https://picsum.photos/1600/500" alt="background" />
+            <img src="https://picsum.photos/id/237/1600/500" alt="background" />
           </div>
           <div>
-            <img src="https://picsum.photos/1600/500" alt="background" />
+            <img src="https://picsum.photos/id/1/1600/500" alt="background" />
           </div>
           <div>
-            <img src="https://picsum.photos/1600/500" alt="background" />
+            <img src="https://picsum.photos/id/12/1600/500" alt="background" />
           </div>
           <div>
-            <img src="https://picsum.photos/1600/500" alt="background" />
+            <img src="https://picsum.photos/id/13/1600/500" alt="background" />
           </div>
           <div>
-            <img src="https://picsum.photos/1600/500" alt="background" />
+            <img src="https://picsum.photos/id/14/1600/500" alt="background" />
           </div>
           <div>
-          <img src="https://picsum.photos/1600/500" alt="background" />
+          <img src="https://picsum.photos/id/15/1600/500" alt="background" />
           </div>
         </Slider>
       </div>
     );
   }
 }
+
