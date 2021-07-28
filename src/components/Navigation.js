@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Home from '../screens/Home'
 import ItemPage from '../screens/ItemPage'
+import MenuPage from '../screens/MenuPage';
 
 export default class Navigation extends Component {
   state = {}
@@ -32,9 +33,15 @@ export default class Navigation extends Component {
             to="/item"
 
           />
+          <Menu.Item 
+          name='Menu'
+          as={Link}
+          to="/menu"
+          />
+          
           <Menu.Item
-            name='Lunch'
-            active={activeItem === 'Lunch'}
+          name='Lunch'
+          active={activeItem === 'Lunch'}
           //onClick={this.handleItemClick}
           />
           <Menu.Item
@@ -61,7 +68,11 @@ export default class Navigation extends Component {
           </Route>
 
           <Route path='/item' exact>
-            <ItemPage/>
+            <ItemPage />
+          </Route>
+
+          <Route path='/menu' exact>
+            <MenuPage />
           </Route>
 
         </Switch>

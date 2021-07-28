@@ -8,7 +8,8 @@ class ItemPage extends React.Component {
         return (
             <div className="ItemPage">
                 <Item />
-                <Ingredients paragraphs={IngredientsData.paragraphs} />
+                <Ingredients paragraphs={IngredientsData.paragraphs} />                
+
             </div>
         )
     }

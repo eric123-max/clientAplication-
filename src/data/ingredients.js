@@ -5,4 +5,4 @@ const IngredientsData = {
     ]
 }
 
-export default IngredientsData
+export default IngredientsData 

@@ -4,7 +4,7 @@ import { Icon, Menu, Table } from 'semantic-ui-react'
 class StandardMenu extends React.Component {
 
     render() {
-
+        //const props = this.props
         return (
             <div className="StandardMenu">
                 <Table celled>
