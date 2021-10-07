@@ -5,6 +5,7 @@ import CommentList from '../components/CommentList'
 import { Container, Divider } from 'semantic-ui-react'
 import AddComment from '../components/AddComment'
 import axios from 'axios'
+import Footer from '../components/Footer'
 
 
 class ItemPage extends React.Component {
@@ -52,6 +53,7 @@ class ItemPage extends React.Component {
                 </Container>
                 <CommentList />
                 <AddComment />
+                <Footer/>
             </div>
         )
     }

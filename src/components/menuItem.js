@@ -2,8 +2,6 @@ import React from 'react'
 import { Card, Icon, Image, Item } from 'semantic-ui-react'
 import { Rating } from 'semantic-ui-react'
 
-
-
 class MenuItem extends React.Component {
 
     render() {
@@ -23,13 +21,12 @@ class MenuItem extends React.Component {
                                 </Card.Description>
                             </Card.Content>
                             <Card.Content extra>
-                                <Icon name='user' />
+                                <Icon name='calendar alternate outline' />
                                 {props.date}
                             </Card.Content>
                         </Card>
                     </Item.Group>
 
-                   
             </div>
         )
     }
