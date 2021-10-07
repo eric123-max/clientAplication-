@@ -1,78 +1,150 @@
 import React from 'react'
-import { Icon, Menu, Table } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
+import { Grid, Segment } from 'semantic-ui-react'
+import "./StandardMenu.css"
 
+//check the design of menu components and see why it shows things other than breakfast (homework)
 class StandardMenu extends React.Component {
-
     render() {
-        //const props = this.props
+
+        // this.state.menu.breakfast.map(function(item){
+        //     return (
+        //         <Grid.column>
+        //             < bname = {item.name}/>
+        //         </Grid.column>
+        //     )
+        // })
+
+        const props = this.props
+        console.log(props)
+        console.log(props.completed)
+        console.log("111111",props.sname)
         return (
             <div className="StandardMenu">
-                <Table celled>
-                    <Table.Header>
-                        <Table.Row>
-                            <Table.HeaderCell>Breakfast</Table.HeaderCell>
-                            <Table.HeaderCell>Lunch</Table.HeaderCell>
-                            <Table.HeaderCell>Dinner</Table.HeaderCell>
-                            <Table.HeaderCell>Midnight snack</Table.HeaderCell>
-                        </Table.Row>
-                    </Table.Header>
+                <h1>{props.date}'s Menu</h1>
+                <h2>Breakfast</h2>
+                <div className="menuSection">
 
-                    <Table.Body>
-                        <Table.Row>
-                            <Table.Cell>whole milk</Table.Cell>
-                            <Table.Cell>Red tiaoxi porridge</Table.Cell>
-                            <Table.Cell>Rice noodles with pork and pickled cabbage</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
+                    <Segment >
+                        <Card.Group>
+                            <Grid columns={3}>
 
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
+                                <Grid.Row color='grey'>
+                                        {
+                                            props.bname.map(function (item) {
+                                                return (
+                                                    <Card key={item._id} id="card">
+                                                        <Card.Content>
+                                                            <Image
+                                                                floated='right'
+                                                                size='mini'
+                                                                src={item.picture}
+                                                            />
+                                                            <Card.Header>{item.name}</Card.Header>
+                                                        </Card.Content>
+                                                    </Card>
+                                                )
+                                            })
+                                        }
 
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
+                                </Grid.Row>
+                            </Grid>
+                        </Card.Group>
+                    </Segment>
+                </div>
 
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
-                            <Table.Cell>Cell</Table.Cell>
+                <h2>Lunch</h2>
+                <div className="menuSection">
+                    <Segment>
+                        <Card.Group>
+                            <Grid columns={3} id="id2">
 
-                        </Table.Row>
-                    </Table.Body>
+                                <Grid.Row>
+                                    
+                                            {
+                                                props.lname.map(function (item) {
+                                                    return (
+                                                        <Card key={item._id} id= "card">
+                                                            <Card.Content>
+                                                                <Image
+                                                                    floated='right'
+                                                                    size='mini'
+                                                                    src={item.picture}
+                                                                />
+                                                                <Card.Header>{item.name}</Card.Header>
+                                                            </Card.Content>
+                                                        </Card>
+                                                    )
+                                                })
+                                            }
 
-                    <Table.Footer>
-                        <Table.Row>
-                            <Table.HeaderCell colSpan='3'>
-                                <Menu floated='right' pagination>
-                                    <Menu.Item as='a' icon>
-                                        <Icon name='chevron left' />
-                                    </Menu.Item>
-                                    <Menu.Item as='a'>1</Menu.Item>
-                                    <Menu.Item as='a'>2</Menu.Item>
-                                    <Menu.Item as='a'>3</Menu.Item>
-                                    <Menu.Item as='a'>4</Menu.Item>
-                                    <Menu.Item as='a'>5</Menu.Item>
-                                    <Menu.Item as='a'>6</Menu.Item>
-                                    <Menu.Item as='a'>7</Menu.Item>
 
-                                    <Menu.Item as='a' icon>
-                                        <Icon name='chevron right' />
-                                    </Menu.Item>
-                                </Menu>
-                            </Table.HeaderCell>
-                        </Table.Row>
-                    </Table.Footer>
-                </Table>
-            </div>
-        )
+                                        
+                                </Grid.Row>
+                            </Grid>
+                        </Card.Group>
+                    </Segment>
+                </div>
+                    <h2>Dinner</h2>
+                    <div className="menuSection">
+                        <Segment>
+                            <Card.Group>
+                                <Grid columns={3} id="id3">
+
+                                    <Grid.Row color='grey'>
+                                            {
+                                                props.dname.map(function(item){
+                                                    return(
+                                                        <Card key={item._id}>
+                                                        <Card.Content>
+                                                            <Image
+                                                                floated='right'
+                                                                size='mini'
+                                                                src={item.picture}
+                                                            />
+                                                            <Card.Header>{item.name}</Card.Header>
+                                                        </Card.Content>
+                                                    </Card>
+                                                    )
+                                                })
+                                            }
+                                    </Grid.Row>
+                                </Grid>
+                            </Card.Group>
+                        </Segment>
+                    </div>
+                    <h2>Snack</h2>
+                    <div className="menuSection">
+                        <Segment >
+                            <Card.Group>
+                                <Grid columns={3} id="id4">
+
+                                    <Grid.Row>
+                                           {
+                                               props.sname.map(function(item){
+                                                   return(
+                                                    <Card key={item._id}>
+                                                    <Card.Content>
+                                                        <Image
+                                                            floated='right'
+                                                            size='mini'
+                                                            src={item.picture}
+                                                        />
+                                                        <Card.Header>{item.name}</Card.Header>
+                                                    </Card.Content>
+                                                </Card>
+                                                   )
+                                               })
+                                           }
+
+                                    </Grid.Row>
+
+                                </Grid>
+                            </Card.Group>
+                        </Segment>
+                    </div>
+                </div>
+                )
     }
 }
-export default StandardMenu
+                export default StandardMenu

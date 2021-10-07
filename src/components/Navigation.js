@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Home from '../screens/Home'
 import ItemPage from '../screens/ItemPage'
-import MenuPage from '../screens/MenuPage';
+import MenuList from './MenuList';
 
 export default class Navigation extends Component {
   state = {}
@@ -17,7 +17,6 @@ export default class Navigation extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
-    const { activeItem } = this.state
 
     return (
       <Router>
@@ -28,20 +27,20 @@ export default class Navigation extends Component {
           >
             The dishes</Menu.Item>
           <Menu.Item
-            name='Breakfast'
+            name='Item Details'
             as={Link}
             to="/item"
 
           />
-          <Menu.Item 
-          name='Menu'
-          as={Link}
-          to="/menu"
-          />
-          
           <Menu.Item
-          name='Lunch'
-          active={activeItem === 'Lunch'}
+            name='Menu'
+            as={Link}
+            to="/menu"
+          />
+
+          {/* <Menu.Item
+            name='Lunch'
+            active={activeItem === 'Lunch'}
           //onClick={this.handleItemClick}
           />
           <Menu.Item
@@ -53,7 +52,7 @@ export default class Navigation extends Component {
             name='Midnight snack'
             active={activeItem === 'Midnight snack'}
           //onClick={this.handleItemClick}
-          />
+          /> */}
 
           <Menu.Item position='right'>
             <Input action={{ icon: 'search' }} placeholder='Search...' />
@@ -67,12 +66,10 @@ export default class Navigation extends Component {
             <Home />
           </Route>
 
-          <Route path='/item' exact>
-            <ItemPage />
+          <Route path='/item/:id' component={ItemPage}>
           </Route>
 
-          <Route path='/menu' exact>
-            <MenuPage />
+          <Route path='/menu/:date' component={MenuList}>
           </Route>
 
         </Switch>
