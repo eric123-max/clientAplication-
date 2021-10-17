@@ -1,6 +1,5 @@
 import React from 'react'
 import { Image, Rail, Segment } from 'semantic-ui-react'
-import "./Item.css"
 
 class Item extends React.Component {
 

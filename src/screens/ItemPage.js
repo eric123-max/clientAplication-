@@ -8,6 +8,7 @@ import axios from 'axios'
 import Footer from '../components/Footer'
 
 
+
 class ItemPage extends React.Component {
     constructor(props){
         super(props )
@@ -21,7 +22,8 @@ class ItemPage extends React.Component {
         const dishId = props.match.params.id
         const self = this
         console.log(axios.get('http://localhost:3030/dishes/'+dishId).then(function (response) {
-            // console.log(response.data.data)
+            console.log('Loading the item page')
+            console.log(response.data.data)
 
             self.setState({
                 item: response.data
@@ -42,8 +44,8 @@ class ItemPage extends React.Component {
 
         return (
             <div className="ItemPage">
+                <div className = "Orange">
 
-                
                 <Item picture={this.state.item.picture} name={this.state.item.name}/>
                 <Ingredients nutrition={this.state.item.nutrition} ingredients ={this.state.item.ingredients} isSpicy={this.state.item.isSpicy} isHot={this.state.item.isHot} />
                 <Divider section />
@@ -54,6 +56,7 @@ class ItemPage extends React.Component {
                 <CommentList />
                 <AddComment />
                 <Footer/>
+                </div>
             </div>
         )
     }

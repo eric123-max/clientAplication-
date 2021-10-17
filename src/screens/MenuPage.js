@@ -7,10 +7,14 @@ class MenuPage extends React.Component {
     render() {
         return (
             <div className="MenuPage">
-                <MenuList/>
-                {/* <StandardMenu /> */}
-                <Footer/>
+                <div className = "Orange">
 
+
+                    <MenuList />
+                    {/* <StandardMenu /> */}
+                    
+                </div>
+                <Footer />
             </div>
         )
     }

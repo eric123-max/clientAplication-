@@ -19,9 +19,11 @@ class MenuList extends React.Component {
         const props= this.props
         const menuDate = props.match.params.date
         const self = this
-        console.log(axios.get('http://localhost:3030/menu?date='+menuDate).then(function (response) {
 
-            // console.log(response.data.data[0])
+
+            console.log(axios.get('http://localhost:3030/menu?date='+menuDate).then(function (response) {
+
+            //  console.log(response.data.data[0])
 
             self.setState({
                 menu: response.data.data[0]
@@ -29,8 +31,9 @@ class MenuList extends React.Component {
             })
         
         })
-        )
-    }
+        )}
+        
+    
  
     componentDidMount() {
         this.getData()
@@ -41,7 +44,6 @@ class MenuList extends React.Component {
         //  const menuId = props.match.params.id
         //   console.log("1234567",props.match.params)
         var content = null
-
         if (this.state.menu._id === undefined){
             content = <h1>no menu found</h1>
         }else {

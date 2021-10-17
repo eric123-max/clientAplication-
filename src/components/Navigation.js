@@ -17,25 +17,30 @@ export default class Navigation extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
+    var today = new Date()
+    var day = today.getDay()
 
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    
     return (
       <Router>
-        <Menu>
-          <Menu.Item header
+        <Menu id = "color">
+          <Menu.Item header id="text"
             as={Link}
-            to="/"
+            to={"/"}
           >
             The dishes</Menu.Item>
-          <Menu.Item
+          <Menu.Item id="text"
             name='Item Details'
             as={Link}
             to="/item"
 
+
           />
-          <Menu.Item
+          <Menu.Item id="text"
             name='Menu'
             as={Link}
-            to="/menu"
+            to={"/menu/"+days[day]}
           />
 
           {/* <Menu.Item
@@ -62,7 +67,7 @@ export default class Navigation extends Component {
         <Switch>
 
 
-          <Route path='/' exact>
+          <Route path='/'exact>
             <Home />
           </Route>
 
@@ -70,6 +75,8 @@ export default class Navigation extends Component {
           </Route>
 
           <Route path='/menu/:date' component={MenuList}>
+
+          {/* <Route path='/menu/' component={MenuList}> */}
           </Route>
 
         </Switch>
