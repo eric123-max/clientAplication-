@@ -11,7 +11,6 @@ class MenuPage extends React.Component {
 
 
                     <MenuList />
-                    {/* <StandardMenu /> */}
                     
                 </div>
                 <Footer />

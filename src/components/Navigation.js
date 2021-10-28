@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-import { Input } from 'semantic-ui-react'
+// import { Input } from 'semantic-ui-react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +9,8 @@ import {
 } from "react-router-dom";
 import Home from '../screens/Home'
 import ItemPage from '../screens/ItemPage'
-import MenuList from './MenuList';
+import MenuList from './MenuList'
+import LoginPage from '../screens/LoginPage';
 
 export default class Navigation extends Component {
   state = {}
@@ -25,23 +26,30 @@ export default class Navigation extends Component {
     return (
       <Router>
         <Menu id = "color">
-          <Menu.Item header id="text"
+          <Menu.Item  header id="text"
+          icon="home"
             as={Link}
             to={"/"}
           >
-            The dishes</Menu.Item>
-          <Menu.Item id="text"
+            Home</Menu.Item>
+          {/* <Menu.Item id="text"
             name='Item Details'
             as={Link}
             to="/item"
 
 
-          />
-          <Menu.Item id="text"
+          /> */}
+          <Menu.Item icon="food" id="text"
             name='Menu'
             as={Link}
             to={"/menu/"+days[day]}
           />
+
+          <Menu.Item position='right' icon="users" id = "text"
+          name="Login"
+          as={Link}
+          to="/login"/>
+          
 
           {/* <Menu.Item
             name='Lunch'
@@ -59,9 +67,9 @@ export default class Navigation extends Component {
           //onClick={this.handleItemClick}
           /> */}
 
-          <Menu.Item position='right'>
+          {/* <Menu.Item position='right'>
             <Input action={{ icon: 'search' }} placeholder='Search...' />
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu>
 
         <Switch>
@@ -75,10 +83,10 @@ export default class Navigation extends Component {
           </Route>
 
           <Route path='/menu/:date' component={MenuList}>
-
-          {/* <Route path='/menu/' component={MenuList}> */}
+            {/* <Route path='/menu/' component={MenuList}> */}
           </Route>
 
+          <Route path='/login' component={LoginPage}></Route>
         </Switch>
       </Router>
     )

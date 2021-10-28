@@ -55,3 +55,17 @@ footer {
     background-color: orange;
 }
 
+/* .Footer{
+    position: fixed;
+    bottom: 0;
+} */
+
+.LoginForm{
+    /* margin-top: 5em; */
+    margin-bottom: 10em;
+    background-color: orange;
+}
+
+.LoginPage{
+    background-color: orange;
+}

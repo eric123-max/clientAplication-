@@ -13,7 +13,7 @@ class CommentList extends React.Component {
 
     getData() {
         const self = this
-        console.log(axios.get('http://localhost:3030/comment').then(function (response) {
+        console.log(axios.get('http://localhost:3030/comment?DishId='+this.props.dishId).then(function (response) {
             console.log(response.data.data)
             self.setState({
                 comment: response.data.data
@@ -25,6 +25,7 @@ class CommentList extends React.Component {
         this.getData()
     }
     render() {
+        console.log(9999999999, this.props)
         return (
             <div className="CommentList">
                  <Grid doubling stackable columns={1}>
@@ -32,7 +33,7 @@ class CommentList extends React.Component {
                         this.state.comment.map(function (item) {
                             return (
                                 <Grid.Column>
-                                    <Comments Id={item.Id} date={item.date} content={item.content} DishId={item.DishId} />
+                                    <Comments Id={item.Id} content={item.content} DishId={item.DishId} />
                                 </Grid.Column>
                             )
                         })

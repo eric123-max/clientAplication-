@@ -42,7 +42,7 @@ class StandardMenu extends React.Component {
                                                     <Card.Content>
                                                         <Image
                                                             floated='right'
-                                                            size='mini'
+                                                            size='tiny'
                                                             src={item.picture}
                                                         />
                                                         <Card.Header>{item.name}</Card.Header>
@@ -73,7 +73,7 @@ class StandardMenu extends React.Component {
                                                         <Card.Content>
                                                             <Image
                                                                 floated='right'
-                                                                size='mini'
+                                                                size='tiny'
                                                                 src={item.picture}
                                                             />
                                                             <Card.Header>{item.name}</Card.Header>
@@ -103,7 +103,7 @@ class StandardMenu extends React.Component {
                                                         <Card.Content>
                                                             <Image
                                                                 floated='right'
-                                                                size='mini'
+                                                                size='tiny'
                                                                 src={item.picture}
                                                             />
                                                             <Card.Header>{item.name}</Card.Header>
@@ -130,7 +130,7 @@ class StandardMenu extends React.Component {
                                                         <Card.Content>
                                                             <Image
                                                                 floated='right'
-                                                                size='mini'
+                                                                size='tiny'
                                                                 src={item.picture}
                                                             />
                                                             <Card.Header>{item.name}</Card.Header>

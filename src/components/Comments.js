@@ -6,7 +6,7 @@ import { Container } from 'semantic-ui-react'
 class Comments extends React.Component {
     render() {
         const props = this.props
-        console.log(props)
+        // console.log(387638763, props)
         console.log(props.completed)
         return (
             <div className="Comments" >
@@ -18,7 +18,7 @@ class Comments extends React.Component {
                              <Comment.Content>
                                 <Comment.Author>{props.name}</Comment.Author>
                                 <Comment.Metadata>
-                                    <div>{props.date}</div>
+                                    {props.Id}
                                 </Comment.Metadata>
                                 <Comment.Text>
                                     <p>

@@ -16,12 +16,12 @@ class MenuList extends React.Component {
 
 
     getData() {
-        const props= this.props
+        const props = this.props
         const menuDate = props.match.params.date
         const self = this
 
 
-            console.log(axios.get('http://localhost:3030/menu?date='+menuDate).then(function (response) {
+        console.log(axios.get('http://localhost:3030/menu?date=' + menuDate).then(function (response) {
 
             //  console.log(response.data.data[0])
 
@@ -29,12 +29,13 @@ class MenuList extends React.Component {
                 menu: response.data.data[0]
 
             })
-        
+
         })
-        )}
-        
-    
- 
+        )
+    }
+
+
+
     componentDidMount() {
         this.getData()
     }
@@ -44,21 +45,21 @@ class MenuList extends React.Component {
         //  const menuId = props.match.params.id
         //   console.log("1234567",props.match.params)
         var content = null
-        if (this.state.menu._id === undefined){
+        if (this.state.menu._id === undefined) {
             content = <h1>no menu found</h1>
-        }else {
-            content = <StandardMenu date ={this.state.menu.date} bname = {this.state.menu.breakfast} lname = {this.state.menu.lunch} dname = {this.state.menu.dinner} sname = {this.state.menu.snack}/>
+        } else {
+            content = <StandardMenu date={this.state.menu.date} bname={this.state.menu.breakfast} lname={this.state.menu.lunch} dname={this.state.menu.dinner} sname={this.state.menu.snack} />
         }
-// standard menu needs:
-//1. bname this props is an array of objects and 
-        
-// = this.state.menu.breakfast.map(function (item) {
-//     return (
-//         <Grid.Column>
-//             <StandardMenu bname = {item.name} bpicture = {item.picture}/>
-//         </Grid.Column>
-//     )
-// })
+        // standard menu needs:
+        //1. bname this props is an array of objects and 
+
+        // = this.state.menu.breakfast.map(function (item) {
+        //     return (
+        //         <Grid.Column>
+        //             <StandardMenu bname = {item.name} bpicture = {item.picture}/>
+        //         </Grid.Column>
+        //     )
+        // })
 
 
 
@@ -66,21 +67,23 @@ class MenuList extends React.Component {
 
         // console.log(this.state)
         // console.log(this.state.menu._id)
-        
+
 
         return (
             <div className="MenuList">
-                 <Grid doubling stackable columns={1}>
-                     {
-                         content 
-                     }
-                </Grid>
- 
+                <div className="Orange">
+
+                    <Grid doubling stackable columns={1}>
+                        {
+                            content
+                        }
+                    </Grid>
+                </div>
             </div>
 
         )
 
-        
+
     }
 
 }
@@ -89,4 +92,3 @@ export default MenuList
 
 
 
-          

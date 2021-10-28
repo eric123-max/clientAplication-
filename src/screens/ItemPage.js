@@ -51,10 +51,10 @@ class ItemPage extends React.Component {
                 <Divider section />
                 <Container>   
                     <h1>Comment section</h1>
-                    <h3>leave a comment</h3>
+                    <h3>leave a comment( and refresh the page)</h3>
                 </Container>
-                <CommentList />
-                <AddComment />
+                <CommentList dishId={this.props.match.params.id}/>
+                <AddComment dishId={this.props.match.params.id}/>
                 <Footer/>
                 </div>
             </div>
